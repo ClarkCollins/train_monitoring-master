@@ -101,7 +101,7 @@ public function get_engines2() {
        $this->db->select("*,CONCAT(DATE(fulldate) ,' ',fulltime ) as DateMin");
 
        $this->db->from('infoplot');
-       $this->db->limit('10');
+       $this->db->limit('1000');
       // $this->db->limit
 
        $data = $this->db->get();
@@ -118,9 +118,29 @@ public function get_engines2() {
         $this->db->where("infoplot.EngineID = engine.EngineID");
         $this->db->where("fulldate BETWEEN '$startDate' AND '$endDate'");
         $this->db->where("fulltime BETWEEN '$startTime' AND '$endTime'");
-       $this->db->limit('10');
+       $this->db->limit('1000');
       // $this->db->limit
 
+       $data = $this->db->get();
+        return $data;
+    }
+    
+     public function get_maps($engineID)
+    {
+       $this->db->select("*");
+
+       $this->db->from('location');
+        $this->db->where("engineID",$engineID);
+       $this->db->limit('1');
+       $data = $this->db->get();
+        return $data;
+    }
+    public function get_maps_default()
+    {
+       $this->db->select("*");
+
+       $this->db->from('location');
+       $this->db->limit('1');
        $data = $this->db->get();
         return $data;
     }

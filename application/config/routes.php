@@ -54,6 +54,7 @@ $route['graph'] = 'HomeController/home';
 $route['table'] = 'HomeController/table';
 $route['table_graph'] = 'HomeController/table_graph';
 $route['Dashboard'] = 'HomeController/dashboard';
+$route['maps'] = 'HomeController/maps';
 $route['login'] = 'AuthController/login';
 $route['login_'] = 'AuthController/login_';
 $route['register'] = 'AuthController/register';

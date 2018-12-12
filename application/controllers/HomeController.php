@@ -53,6 +53,15 @@ class HomeController extends CI_Controller {
         $this->load->view('pages/client_dashboard');
         $this->load->view('layout/footer');
     }
+     public function maps() {
+         $engineID = $this->input->post('engine');
+         $engines['engs_'] = $this->ClientModel->get_engines2();
+         $engines['get_maps'] = $this->ClientModel->get_maps($engineID);
+         $engines['get_maps_default'] = $this->ClientModel->get_maps_default();
+        $this->load->view('layout/header');
+        $this->load->view('pages/client_maps',$engines);
+        $this->load->view('layout/footer');
+    }
     public function table() {
         $this->form_validation->set_rules('e_date', 'End Date', 'trim|callback_compareDates');
         $this->form_validation->set_rules('e_time', 'End Date', 'trim|callback_compareTime');

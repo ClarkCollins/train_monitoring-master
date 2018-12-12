@@ -50,7 +50,14 @@
     </head>
 
     <body>
-
+        <style>
+            #href_id{
+                color:white;
+            }
+            #href_id:hover{
+                color:#A53C3A;
+            }
+        </style>
 
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -62,12 +69,15 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="<?php echo site_url() ?>/Dashboard">Dashboard
+                            <a id="href_id" class="nav-link" href="<?php echo site_url() ?>/Dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo site_url() ?>/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                            <a id="href_id" class="nav-link" href="<?php echo site_url() ?>/maps"><i class="fa fa-map-marker" aria-hidden="true"></i> Location</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="href_id" class="nav-link" href="<?php echo site_url() ?>/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
                         </li>
 
                     </ul>
